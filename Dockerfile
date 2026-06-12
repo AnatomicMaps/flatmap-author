@@ -41,16 +41,3 @@ RUN git clone  --depth 1 --branch ${VIEWER_VERSION} --recurse-submodules \
         https://github.com/AnatomicMaps/flatmap-viewer.git viewer && \
     cd viewer && \
     bun install
-
-# Run the server and the viewer -- it will be available on port 8000
-EXPOSE 8000
-WORKDIR /flatmaps/server
-RUN uv run python -m mapserver viewer
-
-## Mapmaking requires a SPARC API key -- can we pass this in from the host?
-## Or set in a configuration file??
-##
-## Remote making? Relies on `git clone`.
-##
-## Or expose (via config file) a host directory to Docker and provide a command
-## to run `mapmaker`??

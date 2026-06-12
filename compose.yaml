@@ -1,0 +1,12 @@
+name: Flatmap Server
+services:
+    flatmap:
+        ports:
+            - 8000:8000
+        environment:
+            SCICRUNCH_API_KEY: ${SCICRUNCH_API_KEY}
+            SERVER_INTERFACE: 0.0.0.0
+        stdin_open: true
+        tty: true
+        image: flatmap
+        command: uv run python -m mapserver viewer
