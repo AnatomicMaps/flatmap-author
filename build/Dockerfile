@@ -44,6 +44,8 @@ RUN curl -L https://github.com/AnatomicMaps/flatmap-server/archive/refs/tags/v1.
 # Copy the built viewer into the server tree
 COPY --from=viewer /build/viewer/app/dist /server/viewer/app/dist
 
+# Copy mapmaker app
+COPY ./maker/runmaker.py /server
 
 # Initialise the `flatmaps` volume with a pre-built anatomical term hierarchy
 WORKDIR /flatmaps
