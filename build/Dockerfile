@@ -44,6 +44,7 @@ RUN curl -L https://github.com/AnatomicMaps/flatmap-server/archive/refs/tags/${S
 
 # Copy the built viewer into the server tree
 COPY --from=viewer /build/viewer/app/dist /server/viewer/app/dist
+COPY --from=viewer /build/viewer/package.json /server/viewer/
 
 # Copy mapmaker app
 COPY ./maker/runmaker.py /server
