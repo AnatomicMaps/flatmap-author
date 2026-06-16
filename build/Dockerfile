@@ -56,3 +56,4 @@ RUN git config --global --add safe.directory '*'
 # Initialise the `flatmaps` volume with a pre-built anatomical term hierarchy
 WORKDIR /flatmaps
 COPY ./flatmaps/* /flatmaps
+RUN gunzip sparc-distances.npy.gz
