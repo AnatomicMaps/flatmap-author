@@ -27,7 +27,10 @@ if __name__ == '__main__':
     for n, arg in enumerate(args):
         if arg == '--source':
             if n < (len(args) - 1):
-                source_path = Path(args[n+1]).resolve()
+                source = args[n+1]
+                if source.startswith('http:') or source.startswith('https:'):
+                    break
+                source_path = Path(source).resolve()
                 try:
                     local_path = LOCAL_SOURCE_ROOT / source_path.relative_to(FLATMAP_SOURCE_ROOT)
                 except ValueError as e:
