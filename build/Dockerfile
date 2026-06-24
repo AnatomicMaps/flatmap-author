@@ -1,3 +1,5 @@
+################################################################################
+
 # Use `bun` to build the viewer
 FROM oven/bun:canary-alpine AS viewer
 
@@ -15,6 +17,8 @@ RUN apk add --no-cache bash git; \
     bun install --ignore-scripts --no-progress; \
     bash ./scripts/postinstall.sh; \
     bun run build
+
+################################################################################
 
 # Python with `uv` for the server
 FROM astral/uv:python3.12-trixie-slim
@@ -66,3 +70,5 @@ RUN mkdir -p /usr/share/fonts/truetype/custom
 COPY ./fonts/cambria.ttc /usr/share/fonts/truetype/custom/
 RUN chmod 644 /usr/share/fonts/truetype/custom/*; \
     fc-cache -fv
+
+################################################################################
