@@ -35,7 +35,7 @@
 * In the `./build` sub-directory:
 
     ```
-    docker buildx build -t flatmap .
+    docker buildx build -t flatmap:latest .
     ```
 
 ---
