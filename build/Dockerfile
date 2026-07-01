@@ -4,7 +4,7 @@
 FROM oven/bun:canary-alpine AS viewer
 
 # Flatmap viewer to install
-ENV VIEWER_VERSION=v4.7.1
+ENV VIEWER_VERSION=v4.7.3
 
 # First build the viewer distribution
 WORKDIR /build
@@ -26,7 +26,7 @@ FROM astral/uv:python3.12-trixie-slim
 LABEL version="1.0.1"
 
 # Flatmap server to install
-ENV SERVER_VERSION=v1.10.5
+ENV SERVER_VERSION=v1.10.6
 
 # Install curl, build and font tools, and mapmaker's dependencies
 RUN apt-get update; \
