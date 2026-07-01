@@ -23,7 +23,7 @@ RUN apk add --no-cache bash git; \
 # Python with `uv` for the server
 FROM astral/uv:python3.12-trixie-slim
 
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 
 # Flatmap server to install
 ENV SERVER_VERSION=v1.10.6
