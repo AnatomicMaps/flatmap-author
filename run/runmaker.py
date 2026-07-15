@@ -36,7 +36,7 @@ if __name__ == '__main__':
                 except ValueError as e:
                     logging.error(e)
                     exit(1)
-                args[n+1] = str(local_path)
+                args[n+1] = local_path.as_posix()
                 break
     subprocess.run(DOCKER_RUN_MAPMAKER + args)
 
