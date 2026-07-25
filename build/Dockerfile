@@ -4,7 +4,7 @@
 FROM oven/bun:canary-alpine AS viewer
 
 # Flatmap viewer to install
-ENV VIEWER_VERSION=v4.7.4
+ENV VIEWER_VERSION=v4.7.6
 
 # First build the viewer distribution
 WORKDIR /build
